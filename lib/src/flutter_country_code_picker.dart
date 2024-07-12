@@ -241,7 +241,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsetsDirectional.only(bottom: 2, top: 2),
+      padding: const EdgeInsetsDirectional.only(bottom: 3, top: 3),
       width: MediaQuery.of(this.context).size.width,
       decoration: BoxDecoration(
           color: widget.backgroundColor ?? Colors.white,
