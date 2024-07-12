@@ -197,10 +197,6 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                           itemBuilder: (ctx, index) => Column(
                             children: <Widget>[
                               ListTile(
-                                leading: Image.asset(
-                                  'assets/flags/${filteredCountries[index]['code']!.toLowerCase()}.png',
-                                  width: 32,
-                                ),
                                 title: Text(
                                   filteredCountries[index]['name']!,
                                   style: TextStyle(
@@ -254,7 +250,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
             ),
           ],
           border: Border.all(color: Colors.grey, width: 1),
-          borderRadius: const BorderRadius.all(Radius.circular(5))),
+          borderRadius: const BorderRadius.all(Radius.circular(8))),
       child: Row(
         children: [
           Expanded(
