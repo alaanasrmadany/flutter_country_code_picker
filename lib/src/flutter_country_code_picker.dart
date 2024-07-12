@@ -257,12 +257,6 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
           borderRadius: const BorderRadius.all(Radius.circular(5))),
       child: Row(
         children: [
-          buildFlagsButton(),
-          Container(
-            width: 2,
-            height: 48,
-            color: Colors.grey.withOpacity(.4),
-          ),
           Expanded(
             child: TextFormField(
               style: widget.textFielsStyle,
@@ -308,6 +302,15 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 8.0),
+            child: Container(
+              color: const Color(0xFF000000).withOpacity(0.3),
+              width: 1,
+              height: 15,
+            ),
+          ),
+          buildFlagsButton(),
         ],
       ),
     );
@@ -325,24 +328,25 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               widget.showDropdownIcon
-                  ? Icon(
-                      Icons.arrow_drop_down,
-                      color: widget.dropDownArrowColor,
+                  ? const Icon(
+                      Icons.keyboard_arrow_down_outlined,
+                      color: Color(0xFF323333),
                     )
                   : const SizedBox(),
               const SizedBox(width: 4),
-              Image.asset(
-                'assets/flags/${_selectedCountry['code']!.toLowerCase()}.png',
-                width: 32,
-              ),
-              const SizedBox(width: 8),
+              // Image.asset(
+              //   'assets/flags/${_selectedCountry['code']!.toLowerCase()}.png',
+              //   width: 32,
+              // ),
+
               FittedBox(
                 child: Text(
                   '+${_selectedCountry['dial_code']}',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      color: widget.countryCodeTextColor,
-                      fontFamily: widget.fontFamily),
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xffF66729),
+                  ),
                 ),
               ),
               const SizedBox(width: 8),
