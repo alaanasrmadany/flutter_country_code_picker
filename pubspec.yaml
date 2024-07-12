@@ -4,7 +4,7 @@ version: 0.1.2
 homepage: https://github.com/SukumarRaja/flutter_country_code_picker.git
 
 environment:
-  sdk: '>=2.18.1 <3.0.0'
+  sdk: ">=2.18.1 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -21,10 +21,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # To add assets to your package, add an assets section, like this:
   assets:
-    - packages/flutter_country_code_picker/assets/flags/
+    - assets/flags/
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see
