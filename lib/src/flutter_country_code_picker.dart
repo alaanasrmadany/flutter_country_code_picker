@@ -284,16 +284,8 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 filled: true,
                 contentPadding: EdgeInsets.all(12),
                 fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(8),
-                  ),
-                  borderSide: BorderSide(width: 1, color: Color(0xff009BF2)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide: BorderSide(width: 1, color: Colors.grey),
-                ),
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
                 labelStyle: TextStyle(color: Colors.grey),
                 floatingLabelStyle: TextStyle(color: Color(0xff009BF2)),
                 hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
@@ -303,7 +295,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.only(end: 8.0),
+            padding: const EdgeInsetsDirectional.only(end: 5.0),
             child: Container(
               color: const Color(0xFF000000).withOpacity(0.3),
               width: 1,
@@ -327,13 +319,6 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              widget.showDropdownIcon
-                  ? const Icon(
-                      Icons.keyboard_arrow_down_outlined,
-                      color: Color(0xFF323333),
-                    )
-                  : const SizedBox(),
-              const SizedBox(width: 4),
               FittedBox(
                 child: Text(
                   '+${_selectedCountry['dial_code']}',
@@ -344,7 +329,14 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
+              const SizedBox(width: 4),
+              widget.showDropdownIcon
+                  ? const Icon(
+                      Icons.keyboard_arrow_down_outlined,
+                      color: Color(0xFF323333),
+                      size: 14,
+                    )
+                  : const SizedBox(),
             ],
           ),
         ),
