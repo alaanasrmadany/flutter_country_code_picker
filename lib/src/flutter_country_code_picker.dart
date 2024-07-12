@@ -39,9 +39,11 @@ class IntlPhoneField extends StatefulWidget {
   final bool autofocus;
   final TextInputAction? textInputAction;
   final Function? onSubmit;
+  final TextStyle? textFielsStyle;
 
   const IntlPhoneField(
       {super.key,
+      required this.textFielsStyle,
       this.initialCountryCode,
       this.obscureText = false,
       this.textAlign = TextAlign.left,
@@ -239,64 +241,76 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsetsDirectional.only(bottom: 7, top: 5),
-        height: 48,
-        width: MediaQuery.of(this.context).size.width,
-        decoration: BoxDecoration(
-            color: widget.backgroundColor ?? Colors.white,
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey.withOpacity(0),
-                  blurRadius: 2,
-                  spreadRadius: 2)
-            ],
-            border: Border.all(color: Colors.grey, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(5))),
-        child: Row(
-          children: [
-            buildFlagsButton(),
-            Container(
-              width: 2,
-              height: 48,
-              color: Colors.grey.withOpacity(.4),
-            ),
-            Expanded(
-              child: TextFormField(
-                style: TextStyle(fontFamily: widget.fontFamily, fontSize: 14),
-                keyboardType: TextInputType.number,
-                controller: widget.controller,
-                obscureText: widget.obscureText,
-                maxLength: widget.maxLength,
-                validator: widget.validator,
-                onFieldSubmitted: (data) {
-                  // setState(() {
-                  //   print(
-                  //       "initial country code is ${widget.initialCountryCode}");
-                  //   if (widget.initialCountryCode == "IN") {
-                  //     dialCode = "+91";
-                  //   } else {
-                  //     dialCode = "+93";
-                  //   }
-                  //   codeWithNumber = dialCode + data;
-                  //   print("code with number $codeWithNumber");
-                  //   widget.onSubmitted;
-                  // });
-                },
-                decoration: InputDecoration(
-                    counterText: "",
-                    contentPadding: const EdgeInsets.fromLTRB(10, 15, 8, 0),
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10.0),
-                      ),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: widget.hintText,
-                    hintStyle: TextStyle(fontFamily: widget.fontFamily)),
-              ),
+      padding: const EdgeInsetsDirectional.only(bottom: 7, top: 5),
+      height: 48,
+      width: MediaQuery.of(this.context).size.width,
+      decoration: BoxDecoration(
+          color: widget.backgroundColor ?? Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0),
+              blurRadius: 2,
+              spreadRadius: 2,
             ),
           ],
-        ));
+          border: Border.all(color: Colors.grey, width: 1),
+          borderRadius: const BorderRadius.all(Radius.circular(5))),
+      child: Row(
+        children: [
+          buildFlagsButton(),
+          Container(
+            width: 2,
+            height: 48,
+            color: Colors.grey.withOpacity(.4),
+          ),
+          Expanded(
+            child: TextFormField(
+              style: widget.textFielsStyle,
+              keyboardType: TextInputType.number,
+              controller: widget.controller,
+              obscureText: widget.obscureText,
+              maxLength: widget.maxLength,
+              validator: widget.validator,
+              onFieldSubmitted: (data) {
+                // setState(() {
+                //   print(
+                //       "initial country code is ${widget.initialCountryCode}");
+                //   if (widget.initialCountryCode == "IN") {
+                //     dialCode = "+91";
+                //   } else {
+                //     dialCode = "+93";
+                //   }
+                //   codeWithNumber = dialCode + data;
+                //   print("code with number $codeWithNumber");
+                //   widget.onSubmitted;
+                // });
+              },
+              decoration: const InputDecoration(
+                isDense: true,
+                filled: true,
+                contentPadding: EdgeInsets.all(12),
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8),
+                  ),
+                  borderSide: BorderSide(width: 1, color: Color(0xff009BF2)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                  borderSide: BorderSide(width: 1, color: Colors.grey),
+                ),
+                labelStyle: TextStyle(color: Colors.grey),
+                floatingLabelStyle: TextStyle(color: Color(0xff009BF2)),
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
+                suffixIconColor: Color(0xff009BF2),
+                prefixIconColor: Color(0xff7F8184),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   DecoratedBox buildFlagsButton() {
