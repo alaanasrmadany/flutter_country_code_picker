@@ -134,7 +134,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                        padding: const EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.white,
@@ -152,7 +152,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                             padding: EdgeInsets.only(bottom: 8),
                             child: Icon(
                               Icons.close_rounded,
-                              size: 12,
+                              size: 18,
                               color: Color(0xff009BF2),
                             ),
                           ),
@@ -241,7 +241,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Container(
-        padding: const EdgeInsetsDirectional.only(bottom: 5, top: 5),
+        // padding: const EdgeInsetsDirectional.only(bottom: 5, top: 5),
         width: MediaQuery.of(this.context).size.width,
         decoration: BoxDecoration(
             color: widget.backgroundColor ?? Colors.white,
