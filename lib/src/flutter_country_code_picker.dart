@@ -148,10 +148,13 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                           onTap: () {
                             Navigator.of(context).pop();
                           },
-                          child: const Icon(
-                            Icons.close_rounded,
-                            size: 20,
-                            color: Color(0xff009BF2),
+                          child: const Padding(
+                            padding: EdgeInsets.only(bottom: 8),
+                            child: Icon(
+                              Icons.close_rounded,
+                              size: 15,
+                              color: Color(0xff009BF2),
+                            ),
                           ),
                         ))
                   ],
