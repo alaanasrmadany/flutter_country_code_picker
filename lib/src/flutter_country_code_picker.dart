@@ -334,11 +334,6 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                     )
                   : const SizedBox(),
               const SizedBox(width: 4),
-              // Image.asset(
-              //   'assets/flags/${_selectedCountry['code']!.toLowerCase()}.png',
-              //   width: 32,
-              // ),
-
               FittedBox(
                 child: Text(
                   '+${_selectedCountry['dial_code']}',
