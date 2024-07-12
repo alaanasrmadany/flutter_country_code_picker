@@ -288,8 +288,8 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 enabledBorder: InputBorder.none,
                 labelStyle: const TextStyle(color: Colors.grey),
                 floatingLabelStyle: const TextStyle(color: Color(0xff009BF2)),
-                hintStyle: const TextStyle(
-                  color: Colors.grey,
+                hintStyle: TextStyle(
+                  color: Colors.black.withOpacity(0.3),
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 ),
