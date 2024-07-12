@@ -216,6 +216,8 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                                 },
                               ),
                               Divider(
+                                indent: 20,
+                                endIndent: 20,
                                 thickness: 0.5,
                                 color: Colors.black.withOpacity(0.3),
                               ),
