@@ -125,7 +125,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15.0))),
           child: Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(20),
             width: (MediaQuery.of(this.context).size.width / 100) *
                 widget.modalSizePercent,
             child: Column(
@@ -134,7 +134,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                        padding: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.white,
@@ -150,8 +150,8 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                           },
                           child: const Icon(
                             Icons.close_rounded,
-                            size: 18,
-                            color: Colors.red,
+                            size: 20,
+                            color: Color(0xff009BF2),
                           ),
                         ))
                   ],
@@ -159,11 +159,13 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 TextField(
                   keyboardType: TextInputType.text,
                   focusNode: widget.focusNode,
-                  style: TextStyle(
-                      color: Colors.black, fontFamily: widget.fontFamily),
+                  style: widget.textFielsStyle,
                   textInputAction: widget.textInputAction,
                   decoration: InputDecoration(
-                    suffixIcon: const Icon(Icons.search),
+                    suffixIcon: const Icon(
+                      Icons.search,
+                      color: Color(0xff009BF2),
+                    ),
                     labelText: widget.searchText,
                   ),
                   onChanged: (value) {
@@ -188,7 +190,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 empty == true
                     ? Text(
                         "No Data Found",
-                        style: TextStyle(fontFamily: widget.fontFamily),
+                        style: widget.textFielsStyle,
                       )
                     : Expanded(
                         child: ListView.builder(
@@ -197,18 +199,11 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                           itemBuilder: (ctx, index) => Column(
                             children: <Widget>[
                               ListTile(
-                                title: Text(
-                                  filteredCountries[index]['name']!,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontFamily: widget.fontFamily),
-                                ),
+                                title: Text(filteredCountries[index]['name']!,
+                                    style: widget.textFielsStyle),
                                 trailing: Text(
-                                  '+${filteredCountries[index]['dial_code']}',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontFamily: widget.fontFamily),
-                                ),
+                                    '+${filteredCountries[index]['dial_code']}',
+                                    style: widget.textFielsStyle),
                                 onTap: () {
                                   setState(() {
                                     _selectedCountry = filteredCountries[index];
@@ -220,7 +215,10 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                                   Navigator.of(context).pop();
                                 },
                               ),
-                              const Divider(thickness: 1),
+                              Divider(
+                                thickness: 0.5,
+                                color: Colors.black.withOpacity(0.3),
+                              ),
                             ],
                           ),
                         ),
@@ -238,7 +236,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsetsDirectional.only(bottom: 7, top: 5),
-      height: 48,
+      // height: 48,
       width: MediaQuery.of(this.context).size.width,
       decoration: BoxDecoration(
           color: widget.backgroundColor ?? Colors.white,
