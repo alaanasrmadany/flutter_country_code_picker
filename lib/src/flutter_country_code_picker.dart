@@ -279,18 +279,19 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 //   widget.onSubmitted;
                 // });
               },
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
+                hintText: widget.hintText,
                 isDense: true,
                 filled: true,
-                contentPadding: EdgeInsets.all(12),
+                contentPadding: const EdgeInsets.all(12),
                 fillColor: Colors.white,
                 border: InputBorder.none,
                 enabledBorder: InputBorder.none,
-                labelStyle: TextStyle(color: Colors.grey),
-                floatingLabelStyle: TextStyle(color: Color(0xff009BF2)),
-                hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
-                suffixIconColor: Color(0xff009BF2),
-                prefixIconColor: Color(0xff7F8184),
+                labelStyle: const TextStyle(color: Colors.grey),
+                floatingLabelStyle: const TextStyle(color: Color(0xff009BF2)),
+                hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
+                suffixIconColor: const Color(0xff009BF2),
+                prefixIconColor: const Color(0xff7F8184),
               ),
             ),
           ),
@@ -329,14 +330,15 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   ),
                 ),
               ),
-              const SizedBox(width: 4),
+              const SizedBox(width: 6),
               widget.showDropdownIcon
                   ? const Icon(
                       Icons.keyboard_arrow_down_outlined,
                       color: Color(0xFF323333),
-                      size: 14,
+                      size: 16,
                     )
                   : const SizedBox(),
+              const SizedBox(width: 12),
             ],
           ),
         ),
