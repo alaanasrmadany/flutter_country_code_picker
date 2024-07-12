@@ -29,7 +29,7 @@ class IntlPhoneField extends StatefulWidget {
   final bool showDropdownIcon;
   final BoxDecoration dropdownDecoration;
   final List<TextInputFormatter>? inputFormatters;
-  final String searchText;
+  final String? searchText;
   final String hintText;
   final String? fontFamily;
   final Color? countryCodeTextColor;
@@ -40,10 +40,12 @@ class IntlPhoneField extends StatefulWidget {
   final TextInputAction? textInputAction;
   final Function? onSubmit;
   final TextStyle? textFielsStyle;
+  final String? noDataText;
 
   const IntlPhoneField(
       {super.key,
       required this.textFielsStyle,
+      required this.noDataText,
       this.initialCountryCode,
       this.obscureText = false,
       this.textAlign = TextAlign.left,
@@ -67,7 +69,7 @@ class IntlPhoneField extends StatefulWidget {
       this.inputFormatters,
       this.enabled = true,
       this.keyboardAppearance = Brightness.light,
-      this.searchText = 'Search by Country Name',
+      required this.searchText,
       this.countryCodeTextColor,
       this.backgroundColor,
       this.modalSizePercent = 100,
@@ -171,6 +173,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                       color: Color(0xff009BF2),
                     ),
                     labelText: widget.searchText,
+                    labelStyle: widget.textFielsStyle,
                   ),
                   onChanged: (value) {
                     setState(() {
@@ -193,7 +196,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 const SizedBox(height: 20),
                 empty == true
                     ? Text(
-                        "No Data Found",
+                        widget.noDataText!,
                         style: widget.textFielsStyle,
                       )
                     : Expanded(
