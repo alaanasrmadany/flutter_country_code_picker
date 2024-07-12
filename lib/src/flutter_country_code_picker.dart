@@ -134,30 +134,31 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                        padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(.3),
-                                  blurRadius: 2,
-                                  spreadRadius: 1)
-                            ]),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Padding(
-                            padding: EdgeInsets.only(bottom: 8),
-                            child: Icon(
-                              Icons.close_rounded,
-                              size: 18,
-                              color: Color(0xff009BF2),
-                            ),
-                          ),
-                        ))
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.withOpacity(.3),
+                                blurRadius: 2,
+                                spreadRadius: 1)
+                          ]),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Icon(
+                          Icons.close_rounded,
+                          size: 18,
+                          color: Color(0xff009BF2),
+                        ),
+                      ),
+                    ),
                   ],
+                ),
+                const SizedBox(
+                  height: 8,
                 ),
                 TextField(
                   keyboardType: TextInputType.text,
@@ -241,7 +242,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Container(
-        // padding: const EdgeInsetsDirectional.only(bottom: 5, top: 5),
+        padding: const EdgeInsetsDirectional.only(bottom: 2, top: 2),
         width: MediaQuery.of(this.context).size.width,
         decoration: BoxDecoration(
             color: widget.backgroundColor ?? Colors.white,
