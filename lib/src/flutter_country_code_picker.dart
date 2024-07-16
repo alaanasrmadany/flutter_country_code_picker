@@ -243,57 +243,64 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: TextFormField(
-            style: widget.textFielsStyle,
-            keyboardType: TextInputType.number,
-            controller: widget.controller,
-            obscureText: widget.obscureText,
-            maxLength: widget.maxLength,
-            validator: widget.validator,
-            onFieldSubmitted: (data) {
+    return Container(
+      padding: const EdgeInsetsDirectional.only(bottom: 3, top: 3),
+      width: MediaQuery.of(this.context).size.width,
+      decoration: BoxDecoration(
+          color: widget.backgroundColor ?? Colors.white,
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0),
+                blurRadius: 2,
+                spreadRadius: 2)
+          ],
+          border: Border.all(color: Colors.grey, width: 1),
+          borderRadius: const BorderRadius.all(Radius.circular(8))),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextFormField(
+              style: widget.textFielsStyle,
+              keyboardType: TextInputType.number,
+              controller: widget.controller,
+              obscureText: widget.obscureText,
+              maxLength: widget.maxLength,
+              validator: widget.validator,
+              onFieldSubmitted: (data) {
 
-            },
-            decoration: InputDecoration(
-              hintText: widget.hintText,
-              isDense: true,
-              filled: true,
-              contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(width: 1, color:  Color(0xFFE2F2FF))),
-              enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(width: 1, color: Colors.grey)),
-              labelStyle: const TextStyle(color: Colors.grey),
-              floatingLabelStyle: const TextStyle(color: Color(0xff009BF2)),
-              hintStyle: TextStyle(
-                color: Colors.black.withOpacity(0.3),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-              suffixIconColor: const Color(0xff009BF2),
-              prefixIconColor: const Color(0xff7F8184),
-        suffixIcon: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.only(end: 5.0),
-              child: Container(
-        color: const Color(0xFF000000).withOpacity(0.3),
-        width: 1,
-        height: 15,
+              },
+              decoration: InputDecoration(
+                hintText: widget.hintText,
+                isDense: true,
+                filled: true,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+                fillColor: Colors.white,
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                labelStyle: const TextStyle(color: Colors.grey),
+                floatingLabelStyle: const TextStyle(color: Color(0xff009BF2)),
+                hintStyle: TextStyle(
+                  color: Colors.black.withOpacity(0.3),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+                suffixIconColor: const Color(0xff009BF2),
+                prefixIconColor: const Color(0xff7F8184),
               ),
             ),
-            buildFlagsButton(),
-          ],
-        )
+
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 5.0),
+            child: Container(
+              color: const Color(0xFF000000).withOpacity(0.3),
+              width: 1,
+              height: 15,
             ),
           ),
-        ),
-      ],
+          buildFlagsButton(),
+        ],
+      ),
     );
   }
 
