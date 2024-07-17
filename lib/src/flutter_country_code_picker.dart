@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_country_code_picker/text_form_field.dart';
 import '../countries.dart';
 import '../model/phone.dart';
 
@@ -259,45 +260,27 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       child: Row(
         children: [
           Expanded(
-            child: TextFormField(
-              style: widget.textFielsStyle,
-              keyboardType: TextInputType.number,
+            child: CustomTextFormField(
+              searchText: widget.searchText,
+              hintText: widget.hintText,
+              textFielsStyle: widget.textFielsStyle,
               controller: widget.controller,
-              obscureText: widget.obscureText,
               maxLength: widget.maxLength,
               validator: widget.validator,
-              onFieldSubmitted: (data) {},
-              decoration: InputDecoration(
-                hintText: widget.hintText,
-                isDense: true,
-                filled: true,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-                fillColor: Colors.white,
-                border: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                labelStyle: const TextStyle(color: Colors.grey),
-                floatingLabelStyle: const TextStyle(color: Color(0xff009BF2)),
-                hintStyle: TextStyle(
-                  color: Colors.black.withOpacity(0.3),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-                suffixIconColor: const Color(0xff009BF2),
-                prefixIconColor: const Color(0xff7F8184),
-                suffixIcon: IntrinsicHeight(
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.only(end: 5.0),
-                        child: Container(
-                          color: const Color(0xFF000000).withOpacity(0.3),
-                          width: 1,
-                          height: 15,
-                        ),
+              needSuffixIcon: true,
+              suffixIcon: IntrinsicHeight(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(end: 5.0),
+                      child: Container(
+                        color: const Color(0xFF000000).withOpacity(0.3),
+                        width: 1,
+                        height: 15,
                       ),
-                      buildFlagsButton(),
-                    ],
-                  ),
+                    ),
+                    buildFlagsButton(),
+                  ],
                 ),
               ),
             ),
