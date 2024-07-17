@@ -266,9 +266,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
               obscureText: widget.obscureText,
               maxLength: widget.maxLength,
               validator: widget.validator,
-              onFieldSubmitted: (data) {
-
-              },
+              onFieldSubmitted: (data) {},
               decoration: InputDecoration(
                 hintText: widget.hintText,
                 isDense: true,
@@ -286,19 +284,24 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 ),
                 suffixIconColor: const Color(0xff009BF2),
                 prefixIconColor: const Color(0xff7F8184),
+                suffixIcon: IntrinsicHeight(
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(end: 5.0),
+                        child: Container(
+                          color: const Color(0xFF000000).withOpacity(0.3),
+                          width: 1,
+                          height: 15,
+                        ),
+                      ),
+                      buildFlagsButton(),
+                    ],
+                  ),
+                ),
               ),
             ),
-
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.only(end: 5.0),
-            child: Container(
-              color: const Color(0xFF000000).withOpacity(0.3),
-              width: 1,
-              height: 15,
-            ),
-          ),
-          buildFlagsButton(),
         ],
       ),
     );
