@@ -244,48 +244,28 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsetsDirectional.only(bottom: 3, top: 3),
-      width: MediaQuery.of(this.context).size.width,
-      decoration: BoxDecoration(
-          color: widget.backgroundColor ?? Colors.white,
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey.withOpacity(0),
-                blurRadius: 2,
-                spreadRadius: 2)
-          ],
-          border: Border.all(color: Colors.grey, width: 1),
-          borderRadius: const BorderRadius.all(Radius.circular(8))),
-      child: Row(
-        children: [
-          Expanded(
-            child: CustomTextFormField(
-              searchText: widget.searchText,
-              hintText: widget.hintText,
-              textFielsStyle: widget.textFielsStyle,
-              controller: widget.controller,
-              maxLength: widget.maxLength,
-              validator: widget.validator,
-              needSuffixIcon: true,
-              suffixIcon: IntrinsicHeight(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(end: 5.0),
-                      child: Container(
-                        color: const Color(0xFF000000).withOpacity(0.3),
-                        width: 1,
-                        height: 15,
-                      ),
-                    ),
-                    buildFlagsButton(),
-                  ],
-                ),
+    return CustomTextFormField(
+      searchText: widget.searchText,
+      hintText: widget.hintText,
+      textFielsStyle: widget.textFielsStyle,
+      controller: widget.controller,
+      maxLength: widget.maxLength,
+      validator: widget.validator,
+      needSuffixIcon: true,
+      suffixIcon: IntrinsicHeight(
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: 5.0),
+              child: Container(
+                color: const Color(0xFF000000).withOpacity(0.3),
+                width: 1,
+                height: 15,
               ),
             ),
-          ),
-        ],
+            buildFlagsButton(),
+          ],
+        ),
       ),
     );
   }
