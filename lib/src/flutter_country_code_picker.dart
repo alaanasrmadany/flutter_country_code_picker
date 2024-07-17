@@ -254,6 +254,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       needSuffixIcon: true,
       suffixIcon: IntrinsicHeight(
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
               padding: const EdgeInsetsDirectional.only(end: 5.0),
