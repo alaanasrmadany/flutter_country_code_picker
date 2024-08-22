@@ -116,7 +116,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
-
       decoration: InputDecoration(
         hintText: widget.hintText,
         isDense: true,
@@ -124,16 +123,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         contentPadding: const EdgeInsets.symmetric(horizontal: 8),
         fillColor: Colors.white,
         labelText: widget.label,
-        labelStyle: TextStyle(
-          color: Color(0xff8D8D8D),
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-        ),
-        focusedLabelStyle: TextStyle(
-          color: Color(0xffF66729),
-          fontSize: 11,
-          fontWeight: FontWeight.w400,
-        ),
+        labelStyle: widget.labelStyle,
         floatingLabelStyle: const TextStyle(color: Color(0xffF66729)),
         hintStyle: TextStyle(
           color: Colors.black.withOpacity(0.3),

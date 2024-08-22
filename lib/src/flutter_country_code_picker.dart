@@ -41,11 +41,13 @@ class IntlPhoneField extends StatefulWidget {
   final TextInputAction? textInputAction;
   final Function? onSubmit;
   final TextStyle? textFielsStyle;
+  final TextStyle? labelStyle;
   final String? noDataText;
   final String? label;
 
   const IntlPhoneField(
       {super.key,
+        this.labelStyle,
       required this.textFielsStyle,
       required this.noDataText,
         this.initialCountryCode,
@@ -251,6 +253,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       label:widget.label,
       hintText: widget.hintText,
       textFielsStyle: widget.textFielsStyle,
+      labelStyle: widget.labelStyle,
       controller: widget.controller,
       maxLength: widget.maxLength,
       validator: widget.validator,
