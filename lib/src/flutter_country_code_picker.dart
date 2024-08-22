@@ -44,6 +44,7 @@ class IntlPhoneField extends StatefulWidget {
   final TextStyle? labelStyle;
   final String? noDataText;
   final String? label;
+  final Color fillColor;
 
   const IntlPhoneField(
       {super.key,
@@ -84,6 +85,7 @@ class IntlPhoneField extends StatefulWidget {
       this.maxLength,
       this.onSubmit,
       this.fontFamily,
+        this.fillColor,
       required this.hintText,
       this.onEditingComplete});
 
@@ -251,6 +253,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
     return CustomTextFormField(
       searchText: widget.searchText,
       label:widget.label,
+      fillColor:widget.fillColor,
       hintText: widget.hintText,
       textFielsStyle: widget.textFielsStyle,
       labelStyle: widget.labelStyle,

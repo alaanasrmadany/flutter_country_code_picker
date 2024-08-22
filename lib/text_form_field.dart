@@ -43,12 +43,14 @@ class CustomTextFormField extends StatefulWidget {
     this.onEditingComplete,
     this.labelStyle,
     this.label,
+    this.fillColor,
   });
 
   String? hintText;
   bool? needSuffixIcon, needPrefixIcon;
   Widget? suffixIcon;
   Widget? prefixIcon;
+  Color? fillColor;
   BoxConstraints? suffixIconConstraints;
   BoxConstraints? prefixIconConstraints;
   late bool isObscure;
@@ -121,7 +123,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         isDense: true,
         filled: true,
         contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-        fillColor: Colors.white,
+        fillColor: widget.fillColor,
         labelText: widget.label,
         labelStyle: widget.labelStyle,
         floatingLabelStyle: const TextStyle(color: Color(0xffF66729)),
