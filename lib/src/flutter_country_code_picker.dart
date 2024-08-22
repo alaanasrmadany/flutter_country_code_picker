@@ -158,7 +158,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                         child: const Icon(
                           Icons.close_rounded,
                           size: 18,
-                          color: Color(0xff009BF2),
+                          color: Color(0xffF66729),
                         ),
                       ),
                     ),
@@ -175,7 +175,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   decoration: InputDecoration(
                     suffixIcon: const Icon(
                       Icons.search,
-                      color: Color(0xff009BF2),
+                      color: Color(0xffF66729),
                     ),
                     labelText: widget.searchText,
                     labelStyle: widget.textFielsStyle,
