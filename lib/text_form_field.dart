@@ -42,6 +42,7 @@ class CustomTextFormField extends StatefulWidget {
     this.fontFamily,
     this.onEditingComplete,
     this.labelStyle,
+    this.label,
   });
 
   String? hintText;
@@ -78,6 +79,7 @@ class CustomTextFormField extends StatefulWidget {
   BoxDecoration? dropdownDecoration;
   List<TextInputFormatter>? inputFormatters;
   String? searchText;
+  String? label;
   String? fontFamily;
   Color? countryCodeTextColor;
   Color? dropDownArrowColor;
@@ -120,6 +122,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         filled: true,
         contentPadding: const EdgeInsets.symmetric(horizontal: 8),
         fillColor: Colors.white,
+        labelText: widget.label,
         labelStyle: TextStyle(
           color: Color(0xff8D8D8D),
           fontSize: 14,
