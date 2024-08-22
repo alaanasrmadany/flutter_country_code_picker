@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_country_code_picker/text_form_field.dart';
 import '../countries.dart';
 import '../model/phone.dart';
+import 'dart:ui';
 
 class IntlPhoneField extends StatefulWidget {
   final bool obscureText;
