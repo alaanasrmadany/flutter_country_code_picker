@@ -45,7 +45,7 @@ class CustomTextFormField extends StatefulWidget {
     this.onEditingComplete,
     this.labelStyle,
     this.label,
-    this.fillColor,
+    required this.fillColor,
   });
 
   String? hintText;

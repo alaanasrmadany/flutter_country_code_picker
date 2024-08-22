@@ -86,7 +86,7 @@ class IntlPhoneField extends StatefulWidget {
       this.maxLength,
       this.onSubmit,
       this.fontFamily,
-        this.fillColor,
+        required this.fillColor,
       required this.hintText,
       this.onEditingComplete});
 
