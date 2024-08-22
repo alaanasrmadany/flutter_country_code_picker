@@ -116,6 +116,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
+
       decoration: InputDecoration(
         hintText: widget.hintText,
         isDense: true,
