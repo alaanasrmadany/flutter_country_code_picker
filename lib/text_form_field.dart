@@ -41,6 +41,7 @@ class CustomTextFormField extends StatefulWidget {
     this.onSubmit,
     this.fontFamily,
     this.onEditingComplete,
+    this.labelStyle,
   });
 
   String? hintText;
@@ -55,6 +56,7 @@ class CustomTextFormField extends StatefulWidget {
   late TextEditingController? controller;
   TextEditingController? matchPasswordController;
   TextStyle? textFielsStyle;
+  TextStyle? labelStyle;
   TextAlign? textAlign;
   VoidCallback? onTap;
   FormFieldSetter<PhoneNumber>? onSaved;
@@ -118,19 +120,24 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         filled: true,
         contentPadding: const EdgeInsets.symmetric(horizontal: 8),
         fillColor: Colors.white,
-        labelStyle: const TextStyle(color: Colors.grey),
-        floatingLabelStyle: const TextStyle(color: Color(0xff009BF2)),
+        labelStyle: TextStyle(
+          color: Color(0xff8D8D8D),
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+        ),
+        focusedLabelStyle: TextStyle(
+          color: Color(0xffF66729),
+          fontSize: 11,
+          fontWeight: FontWeight.w400,
+        ),
+        floatingLabelStyle: const TextStyle(color: Color(0xffF66729)),
         hintStyle: TextStyle(
           color: Colors.black.withOpacity(0.3),
           fontSize: 14,
           fontWeight: FontWeight.w400,
         ),
-        border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-            borderSide: BorderSide(width: 1, color: Color(0xff009BF2))),
-        enabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-            borderSide: BorderSide(width: 1, color: Colors.grey)),
+        border: InputBorder.none,
+        enabledBorder: InputBorder.none,
         suffixIcon: widget.needSuffixIcon! ? widget.suffixIcon : null,
         prefixIcon: widget.needPrefixIcon! ? widget.prefixIcon : null,
         suffixIconConstraints: widget.suffixIconConstraints,
