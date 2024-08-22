@@ -294,7 +294,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xffF66729),
+                    color: Color(0xff009BF2),
                   ),
                 ),
               ),
