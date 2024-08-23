@@ -266,7 +266,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.only(end: 0.0),
+              padding: const EdgeInsetsDirectional.only(end: 5.0),
               child: Container(
                 color: const Color(0xFF000000).withOpacity(0.3),
                 width: 1,
