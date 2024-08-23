@@ -309,7 +309,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                       size: 16,
                     )
                   : const SizedBox(),
-              const SizedBox(width: 12),
+              // const SizedBox(width: 12),
             ],
           ),
         ),
