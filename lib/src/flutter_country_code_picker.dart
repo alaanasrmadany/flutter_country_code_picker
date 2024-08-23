@@ -262,8 +262,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       maxLength: widget.maxLength,
       validator: widget.validator,
       needSuffixIcon: true,
-      suffixIcon: IntrinsicHeight(
-        child: Row(
+      suffixIcon:Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
@@ -277,7 +276,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
             buildFlagsButton(),
           ],
         ),
-      ),
+
     );
   }
 
