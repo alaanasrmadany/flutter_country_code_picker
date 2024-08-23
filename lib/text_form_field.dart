@@ -124,7 +124,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         hintText: widget.hintText,
         isDense: true,
         filled: true,
-        contentPadding: const EdgeInsetsDirectional.symmertic(vertical:0,horizontal:0),
+        contentPadding: const EdgeInsetsDirectional.symmetric(vertical:0,horizontal:0),
         fillColor: widget.fillColor,
         labelText: widget.label,
         labelStyle: widget.labelStyle,
