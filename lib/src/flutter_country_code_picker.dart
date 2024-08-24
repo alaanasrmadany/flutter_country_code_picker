@@ -148,9 +148,6 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.white,
-                          border: Border.all(
-                            color: Color(0xffCCCCCC),
-                          ),
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.grey.withOpacity(.3),
