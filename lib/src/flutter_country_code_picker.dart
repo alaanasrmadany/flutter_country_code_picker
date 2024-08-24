@@ -173,7 +173,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 TextField(
                   keyboardType: TextInputType.text,
                   focusNode: widget.focusNode,
-                  style: widget.textFielsStyle,
+                  style: widget.labelStyle,
                   textInputAction: widget.textInputAction,
                   decoration: InputDecoration(
                     suffixIcon: const Icon(
