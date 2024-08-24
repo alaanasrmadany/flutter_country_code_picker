@@ -185,6 +185,34 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                     ),
                     labelText: widget.searchText,
                     labelStyle: widget.textFielsStyle,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4.0), // Optional: to make the corners rounded
+                      borderSide: BorderSide(
+                        color: Color(0xffCCCCCC), // Border color
+                        width: 1.0, // Border width
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                      borderSide: BorderSide(
+                        color: Color(0xffCCCCCC), // Border color when focused
+                        width: 1.0,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                      borderSide: BorderSide(
+                        color: Color(0xffCCCCCC), // Border color when enabled
+                        width: 1.0,
+                      ),
+                    ),
+                    disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                      borderSide: BorderSide(
+                        color: Color(0xffCCCCCC), // Border color when disabled
+                        width: 1.0,
+                      ),
+                    ),
                   ),
                   onChanged: (value) {
                     setState(() {
