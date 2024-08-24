@@ -173,7 +173,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 TextField(
                   keyboardType: TextInputType.text,
                   focusNode: widget.focusNode,
-                  style: widget.labelStyle,
+                  style: widget.textFielsStyle,
                   textInputAction: widget.textInputAction,
                   decoration: InputDecoration(
                     suffixIcon: const Icon(
@@ -181,7 +181,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                       color: Color(0xffF66729),
                     ),
                     labelText: widget.searchText,
-                    labelStyle: widget.textFielsStyle,
+                    labelStyle: widget.labelStyle,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0), // Optional: to make the corners rounded
                       borderSide: BorderSide(
